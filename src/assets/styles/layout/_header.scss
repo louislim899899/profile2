@@ -1,0 +1,14 @@
+.header {
+    left: 0;
+    z-index: 99;
+
+    @extend %full-height-absolute
+}
+
+.header__button__title {
+    font-weight: bold;
+    line-height: 1.25;
+    font-size: 1.875rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}

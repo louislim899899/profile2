@@ -1,0 +1,55 @@
+$_nav-width: 10em;
+
+.nav {
+    padding-left: 1rem;
+    min-width: max-content;
+    background-color: $color-black-rgba;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(8, 8, 8, 0.25);
+    top: 0;
+    left: 0;
+    width: $_nav-width;
+    font-size: $font-size-lg;
+    z-index: 99;
+
+    display: grid;
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+
+    @extend %full-height-absolute;
+    @include transition(all, 300ms, ease-in-out);
+
+    &--show{
+        left: 0;
+    }
+
+    &--hide{
+        left: -$_nav-width;
+    }
+
+    &__link{
+        display: block;
+        padding: $padding-y;
+        font-size: $font-size-md;
+
+        &:hover{
+            color: $color-main;
+            transition: color 0.3s ease-in-out;
+        }
+    }
+}
+
+.copyright {
+    grid-row: span 1 / span 1;
+    @include flexContainer(row, initial, flex-end);
+    padding-bottom: 0.75rem;
+
+    p{
+        font-size: $font-size-sm;
+    }
+
+}
+
+// row-span-1 flex items-end pb-3
+
+// btn-group pull-right pl-4 min-w-max bg-black absolute top-0 h-full w-56 transition-all ease-in-out duration-300 grid grid-rows-6 

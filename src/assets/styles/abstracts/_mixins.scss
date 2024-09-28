@@ -1,0 +1,42 @@
+// ***
+// https://www.educative.io/blog/sass-best-practices-frontend-coding-tips
+// .main-container {
+//     @include flexContainer(column, center, center);
+//   }
+@mixin icon-name($name) {
+    .icon-#{$name} {
+        background-image: url("../images/#{$name}.png");
+    }
+}
+
+// ***
+// .main-container {
+//     @include flexContainer(column, center, center);
+//   }
+@mixin flexContainer($direction: row, $justify: initial, $align: initial) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin transition($property, $duration: 0.3s, $timing-function: ease-in-out, $delay:0s) {
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $timing-function;
+    transition-delay: $delay;
+}
+
+@mixin absoluteContainer($top: initial, $right: initial, $bottom: initial, $left: initial) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin padding($direction, $multiplier) {
+    padding-#{$direction}: $multiplier * 2em;
+}
+
+

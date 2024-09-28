@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:thin,regular,bold,italic&subset=latin,latin-ext');
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+@font-face {
+  font-family: SourceSerif-Thin;
+  src: url(./assets/fonts/Source_Serif_Pro/SourceSerifPro-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: SourceSerif-Bold;
+  src: url(./assets/fonts/Source_Serif_Pro/SourceSerifPro-Bold.ttf);
+}
+
+body {
+  font-family: "SourceSerif-Thin";
+  color: white
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "SourceSerif-Bold";
+  color: white
+}

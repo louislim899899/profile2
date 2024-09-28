@@ -1,0 +1,40 @@
+@use 'sass:math';
+@use 'sass:map';
+
+/// call the map value using => map.get($font-weights, "light")
+$font-weights: (
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+);
+
+$colors: (
+    "main": #e56b6f,
+    "black": #000000,
+    "white": #FFFFFF,
+);
+
+/// color
+$color-main: #e56b6f;
+$color-secondary: #212025;
+$color-black: #000000;
+$color-black-rgba: rgba(8, 8, 8, 0.75);
+$color-font: #FFFFFF;
+$color-background: linear-gradient(to left top, #212025, #212025, #212025, #212025, #212025, #23212a, #24222f, #262334, #29253f, #2c274b, #2e2957, #302b63);
+
+/// font
+$base-font-size: 1rem;
+$line-height: 1.75rem;
+
+$font-size-sm: $base-font-size * 0.75;
+$font-size-md: $base-font-size * 1.25;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+$font-size-xxxl: $base-font-size * 6;
+
+/// padding / margin
+$padding-y: 0.5em 0;
+
+$content-padding-top: 13em;

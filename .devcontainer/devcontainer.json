@@ -1,0 +1,23 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+// Reference: https://manfredmlange.medium.com/creating-a-dev-container-for-typescript-and-vs-code-part-1-e653bb95c27f
+{
+	"name": "React Profile",    // help identity which container is running
+	"dockerComposeFile": [
+		"docker-compose.yml",
+	],
+	// The name of the following service has to match one of the services in docker-compose.yml
+	"service": "devcontainer",  // container name, must be same with docker-compose.yml
+	"workspaceFolder": "/profile",  // container start with workspace /src
+	"extensions": [ // extension to use when dev container run
+		"firsttris.vscode-jest-runner",
+		"esbenp.prettier-vscode",
+		"eamodio.gitlens",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"ms-vsliveshare.vsliveshare",
+		"rtbenfield.vscode-jest-test-adapter",
+		"dbaeumer.vscode-eslint",
+	],
+	"shutdownAction": "stopCompose",    // run when we close folder or VS code: stop the container
+	"remoteUser": "node", //Zero trust & Principle of Least Privileage, do not install sudo or run as root to prevent running your code
+	"postCreateCommand": "apt-get update && apt-get install -y docker.io",
+}

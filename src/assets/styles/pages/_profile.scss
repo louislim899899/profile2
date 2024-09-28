@@ -1,0 +1,121 @@
+.profile {
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        @include absoluteContainer($left: 0);
+        overflow-y: scroll;
+        z-index: 2;
+    }
+    
+    &__content {
+        height: 100%;
+        max-width: 36em;
+        padding-top: $content-padding-top;
+        @include absoluteContainer($left: 9rem);
+
+        @include media("<=tablet") {
+            max-width: 100%;
+            left: 0;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+
+    &__image {
+        img {
+            height: 100vh;
+            filter: brightness(100%) var(--tw-grayscale);
+            padding-top: 10em;
+            margin: auto;
+            @include transition(all, $duration: 0.5s);
+        }
+        @include absoluteContainer($top: 0);
+        @include transition(all, $duration: 0.5s);
+
+        @include media(">tablet") {
+            &.is-home {
+                right: 14em;
+            }
+    
+            &.not-home {
+                right: 0;
+                transition-delay: 0ms;
+            }
+        }
+
+        @include media("<=tablet") {
+            position: relative;
+
+            img {
+                max-width: 200%;
+                margin-left: -9rem;
+                margin-top: 0rem;
+                height: 90vh;
+                position: absolute;
+                bottom: 0;
+            }
+
+            &.not-home {
+                img {
+                    filter: brightness(30%) var(--tw-grayscale);
+                }
+
+            }
+        }
+
+        &__container {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+        }
+
+    }
+
+    &__deco {
+        background-color: $color-main;
+        width: 50%;
+        height: 100%;
+        @include absoluteContainer($top: 0, $right: 5rem);
+    }
+
+    &__skill {
+        @extend %profile-element;
+        @include absoluteContainer($top: 4rem, $right: 4rem);
+
+        @include media("<tablet") {
+            top: 0;
+            right: 0;
+            z-index: 10;
+        }
+    }
+
+    &__github {
+        @extend %profile-element;
+        @include absoluteContainer($bottom: 4rem, $right: 4rem);
+
+        @include media("<tablet") {
+            display: none;
+            // right: 0;
+            // z-index: 10;
+        }
+
+        z-index: 9;
+    }
+}
+
+
+%profile-element{
+    padding: 2em 0;
+    width: 9em;
+    @include transition(all);
+
+    &.is-home {
+        opacity: 100%;
+        transition-delay: 300ms;
+    }
+
+    &.not-home {
+        opacity: 0;
+    }
+}

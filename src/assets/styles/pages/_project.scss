@@ -1,0 +1,71 @@
+.project {
+
+    @include media('>tablet') {
+        width: 100%;
+        min-width: 50rem;
+
+        a {
+            display: block;
+            float: left;
+
+            img {
+                filter: brightness(0.5);
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                img{
+                    filter: brightness(1);
+                }
+            }
+        }
+    }
+
+    &__header {
+
+        @include media('>tablet') {
+            @include flexContainer($align: center);
+            margin-bottom: 1rem;
+    
+            &__image {
+                max-width: 24rem;
+            }
+
+            &__subtitle {
+                padding-left: 1rem;
+            }
+        }
+
+        &__image {
+            margin-bottom: 1rem;
+        }
+        
+
+        
+    }
+
+    &__view {
+        padding-bottom: 3em;
+    }
+
+    &__link {
+        margin-bottom: 1em;
+        margin-top: 2em;
+        position: relative;
+        width: fit-content;
+
+        &:before{
+            content: '';
+            width: 130%;
+            height: 1px;
+            background: $color-main;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    &__image {
+        margin-bottom: 3em;
+    }
+
+}

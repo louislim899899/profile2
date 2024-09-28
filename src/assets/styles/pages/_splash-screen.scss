@@ -1,0 +1,69 @@
+/* Google chrome */
+@-webkit-keyframes svg-text-anim {
+    40% {
+       stroke-dashoffset: 0;
+       fill: transparent;
+     }
+     60% {
+       stroke-dashoffset: 0;
+       fill: #ffffff;
+     }
+     100% {
+       stroke-dashoffset: 0;
+       fill: #ffffff;
+     }
+     
+ }
+ /* Most browsers */
+ @keyframes svg-text-anim {
+    40% {
+       stroke-dashoffset: 0;
+       fill: transparent;
+     }
+     60% {
+       stroke-dashoffset: 0;
+       fill: #ffffff;
+     }
+     100% {
+       stroke-dashoffset: 0;
+       fill: #ffffff;
+     }
+     
+ }
+
+
+ .splash-screen {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: transparent;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+
+    .svgWrapper{
+      display: flex;
+      justify-content: center;
+    }
+
+    svg {
+      margin: auto 0 0 15px;
+        // height: 100%;
+    }
+ }
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+}
+
+ .clip-circle {
+  clip-path: circle(20px at center);
+}
