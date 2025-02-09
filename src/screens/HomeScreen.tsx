@@ -1,8 +1,11 @@
-import ProfileIntro from "@/components/profile/ProfileIntro";
 import React, {useEffect} from "react";
+import Hero from "../components/home/Hero";
+import About from "../components/home/About";
+import Skill from "../components/home/Skill";
+import Project from "../components/home/Project";
+import Contact from "../components/home/Contact";
 
 export default function HomeScreen() {
-
     useEffect(() => {
         const introElems = document.querySelectorAll(".intro>*") 
         const skillElems = document.querySelectorAll(".profile__skill>*>*") 
@@ -53,7 +56,13 @@ export default function HomeScreen() {
 
 
     return(
-        <ProfileIntro/>
+        <div>
+            <Hero />
+            <About/>
+            <Skill />
+            <Project />
+            <Contact />
+        </div>
     )
 
 

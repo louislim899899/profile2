@@ -1,0 +1,278 @@
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background: linear-gradient(to right,hsla(220, 13%, 0%, .3) 40%, hsla(220, 13%, 0%, 1) 80%);
+    top: 0;
+    right: 0;
+    transition: opacity .8s cubic-bezier(.2, 0, .2, 1);
+
+    &.active {
+        // .overlay {
+            opacity: 0.35;
+            visibility: visible;
+        // }
+    }
+}
+
+
+
+// .button {
+//     position: sticky;
+//     z-index: 99;
+    
+//     .button-icon {
+//         transition: transform 0.3s ease;
+
+//         &::after {
+//             transform: rotate(0deg);
+//         }
+//     }
+
+//     &.active .button-icon{
+
+//         &::after {
+//             transform: rotate(45deg);
+//         }
+//     }
+// }
+
+.buttonContainer {
+    height: 80px;
+    width: 80px;
+    background: black;
+    position: relative;
+    border-radius: 50%;
+}
+
+.buttonWrapper {
+    position: sticky;
+    right: 0;
+}
+
+// .buttonIcon {
+//     position: absolute;
+//     height: 10px;
+//     width: 80px;
+//     top: 50%;
+//     transform: translateY(-50%);
+
+//     &:before {
+//         content: '';
+//         width: 30px;
+//         height: 1px;
+//         background: white;
+//         position: absolute;
+//         top: 0;
+//         transform: translate(-50%, -50%);
+//     }
+
+//     &:after {
+//         content: '';
+//         width: 30px;
+//         height: 1px;
+//         background: white;
+//         position: absolute;
+//         bottom: 0;
+//         transform: translate(-50%, -50%);
+//     }
+// }
+
+.button {
+    position: fixed;
+    z-index: 99;
+    right: 50px;
+    top: 50px;
+
+    .buttonIcon {
+        position: absolute;
+        height: 10px;
+        width: 80px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: white;
+            position: absolute;
+            top: 0;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease-in-out;
+            transform-origin: 21px 3px;
+        }
+
+        &:after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease-in-out;
+            transform-origin: 20px 0;
+        }
+    }
+}
+
+.active .button{
+    .buttonIcon {
+        &:after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+// ============================== Side Menu ===============================
+
+.siteMenuContainer {
+    height: 100vh;
+    width: fit-content;
+    // padding: 10rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate(calc(110% + 6vw),0) rotate(0.001deg);
+    transition: transform 1187.48ms cubic-bezier(0.7, 0, 0.2, 1) -221.129ms;
+    will-change: transform;
+    z-index: 1;
+}
+
+.roundDivWrap {
+    position: absolute;
+    left: 1px;
+    transform: translateX(-100%);
+    height: 100%;
+    top: 0;
+
+
+    .roundDiv {
+        width: 6vw;
+        height: 100%;
+        transition: var(--animation-slow);
+        transition: all .85s cubic-bezier(.7, 0, .2, 1);
+        will-change: width;
+        
+        .round {
+            background: white;
+            height: 150%;
+            content: "";
+            display: block;
+            position: absolute;
+            width: 775%;
+            top: 50%;
+            border-radius: 50%;
+            transform: translate(-6.5%, -50%);
+        }
+    }
+}
+
+
+.active {
+
+    .siteMenuContainer {
+        transform: translate(0, 0) rotate(0.001deg);
+        .roundDivWrap {
+            
+            .roundDiv {
+                width: 0vw;
+
+                .round {
+                }
+            }
+    }
+
+    }
+}
+
+// =========================== Side Menu Item ============================
+.sideMenu {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: relative;
+    padding: 15vh 7.5vw 10vh 7.5vw;
+
+    li {
+        display: block;
+        font-size: 3.5rem;
+        width: fit-content;
+        position: relative;
+        transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+        transform: translate(15vw, 0) rotate(0.001deg);
+        will-change: transform;
+
+ 
+
+
+
+    //     &:nth-child(1) { transition-delay: 0.12s; }
+    //     &:nth-child(2) { transition-delay: 0.09s; }
+    //     &:nth-child(3) { transition-delay: 0.06s; }
+    //     &:nth-child(4) { transition-delay: 0.03s; }
+    }
+
+    a {
+        display: inline-block;
+        will-change: transform;
+
+        &:after {
+            content: '';
+            position: absolute;
+            background: black;
+            left: -30px;
+            top: 50%;
+            bottom: auto;
+            width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+            height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+            border-radius: 50%;
+            transition: all .3s cubic-bezier(.7, 0, .3, 1);
+            transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+        }
+
+        &:hover:after {
+            transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+        }
+
+        &.active:after {
+            transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+        }
+
+    }
+}
+
+:not(.active) .sideMenu a {
+
+
+}
+
+// /* 🎯 When menu closes, reverse transition delay */
+// .sideMenu:not(.active) a {
+//     transform: translate(15vw, 0) rotate(0.001deg);
+
+//     &:nth-child(1) { transition-delay: 0.12s; }
+//     &:nth-child(2) { transition-delay: 0.09s; }
+//     &:nth-child(3) { transition-delay: 0.06s; }
+//     &:nth-child(4) { transition-delay: 0.03s; }
+// }
+
+// /* 🎯 When menu is active, move links in order */
+.active .sideMenu li {
+    transform: translate(0, 0) rotate(0.001deg);
+    
+    &:nth-child(1) { transition-delay: 0.03s; }
+    &:nth-child(2) { transition-delay: 0.06s; }
+    &:nth-child(3) { transition-delay: 0.09s; }
+    &:nth-child(4) { transition-delay: 0.12s; }
+}
+
+
+
+// /* 🔹 Reverse transition delay when menu is closing */

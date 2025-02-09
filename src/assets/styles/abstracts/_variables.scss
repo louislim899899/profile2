@@ -12,15 +12,22 @@ $font-weights: (
 $colors: (
     "main": #e56b6f,
     "black": #000000,
-    "white": #FFFFFF,
+    "white": #F4F4F4,
+    "font": #282c34,
+    "lightgrey": #C1C1C0,
 );
+
+:root {
+    --color-light-grey: #c1c1c0;
+    --color-white: #f4f4f4
+}
 
 /// color
 $color-main: #e56b6f;
 $color-secondary: #212025;
 $color-black: #000000;
 $color-black-rgba: rgba(8, 8, 8, 0.75);
-$color-font: #FFFFFF;
+$color-font: #282c34;
 $color-background: linear-gradient(to left top, #212025, #212025, #212025, #212025, #212025, #23212a, #24222f, #262334, #29253f, #2c274b, #2e2957, #302b63);
 
 /// font

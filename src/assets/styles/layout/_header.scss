@@ -9,6 +9,63 @@
     font-weight: bold;
     line-height: 1.25;
     font-size: 1.875rem;
-    padding-left: 2rem;
-    padding-top: 2rem;
 }
+
+
+.magnet-button {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: 'Syne', sans-serif;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+      at 100% 100%, 
+      rgba(129,104,206,1) 20%, 
+      rgba(156,171,207,1) 100%
+    );
+    box-shadow: 4px 4px 20px 4px rgba(156, 171, 207, 0.12);
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    position: absolute;
+    right: 10em;
+    top: 10em;
+  }
+
+  .button-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f76d6;
+    width:  clamp(6rem, 0.4615rem + 18.4615vw, 12rem);
+    height: clamp(6rem, 0.4615rem + 18.4615vw, 12rem);
+    overflow: hidden;
+    clip-path: circle();
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #2961ac;
+      border-radius: 50%;
+      transition: all 0.5s cubic-bezier(0.33, 0.75, 0.33, 0.75);
+      transform: translate(0, 100%);
+    }
+    &:hover:before {
+      transform: translate(0, 0%);
+    }
+  }
+  
+  
+  .button-text {
+    font-size: clamp(1rem, 0.2885rem + 1.5385vw, 1.25rem);
+    color: white;
+    user-select: none;
+  }

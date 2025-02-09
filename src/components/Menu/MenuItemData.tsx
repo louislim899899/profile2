@@ -1,15 +1,11 @@
-export const MenuItem = [
+export const MenuItemData = [
     {
         title: "Home",
-        url: "/profile"
+        url: "/"
     },
     {
         title: "About",
         url: "/about"
-    },
-    {
-        title: "Experience",
-        url: "/experience"
     },
     {
         title: "Project",

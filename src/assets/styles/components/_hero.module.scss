@@ -1,0 +1,107 @@
+.hero {
+    background: var(--color-light-grey);
+    position: relative;
+    height: clamp(100vh, 800px, 1000px);
+    display: grid;
+    // grid-template-columns: minmax(1em, 1fr) repeat(12, minmax(10rem, 30rem)) ;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+
+
+
+    .profile_image{
+        width: 800px;
+        grid-column: 4/ span 6;
+        grid-row: 2 /span 8;
+    }
+
+    .location {
+        grid-row: 3;
+        grid-column: 3 / span 2;
+    }
+
+    .role_container {
+        grid-row: 4;
+        grid-column: 3 /span 3;
+        align-self: flex-end;
+        z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .role {
+            color: var(--color-white);
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        } 
+
+        .arrow {
+            transform: rotate(-30deg);
+            fill: var(--color-white);
+            margin-right: -2em;
+        }
+
+        .word{
+            display: inline-block;
+            opacity: 1;
+        }
+
+    }
+
+    .location {
+        grid-row: 3;
+        grid-column: 3;
+
+        --inner-angle: calc((360 / 16) * 1deg);
+        --character-width: 1;
+        font-family: monospace;
+        text-transform: uppercase;
+        font-size: 15px;
+        position: relative;
+    }
+
+    .location [style*=--index] {
+        transform:
+          translate(-50%, -50%)
+          rotate(calc(var(--inner-angle) * var(--index)))
+          translateY(var(--radius, -5ch));
+      }
+
+    
+    .arrow {
+        grid-row: 6;
+        grid-column: 6; 
+    }
+
+    .ringtext {
+        grid-row: 3;
+        grid-column: 3;
+        
+        height: 200px;
+        width: 200px;
+        position: relative;
+        animation: effect 8s linear infinite;
+
+        span {
+            position: absolute;
+            left: 50%;
+            transform-origin: 0px 100px;
+            transform-style: flat;
+            // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #fff;
+          }/*# sourceMappingURL=index.css.map */
+    }
+}
+
+@keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

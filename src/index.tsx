@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './services/store';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,6 +16,9 @@ root.render(
 
   <React.StrictMode>
     <BrowserRouter>
+      <Routes>
+        <Route index element={<HomeScreen />} />
+      </Routes>
       <App />
     </BrowserRouter>
   </React.StrictMode>

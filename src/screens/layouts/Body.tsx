@@ -14,8 +14,9 @@ import AboutScreen from '../AboutScreen'
 import ExperienceScreen from '../ExperienceScreen'
 import ContactScreen from '../ContactScreen'
 import Github from '@/components/profile/Github'
-import profileCss from '@/assets/styles/pages/_profile.module.scss'
+// import profileCss from '@/assets/styles/pages/_profile.module.scss'
 import ProjectView from '../../components/project/ProjectView'
+import AppStyle from '../../../src/assets/styles/layout/_app.module.scss'
 
 
 // const HomeScreen = lazy(() => import('../HomeScreen'));
@@ -31,8 +32,6 @@ export default function Body() {
     const device = useSelector((state: RootState) => state.screen.device)
 
     const isMounted = React.useRef(false);
-
-    // console.log(isHomeScreen);
 
     const compareUrl = () => {
         // dispatch(screenActions.currentUrl())
@@ -72,39 +71,21 @@ export default function Body() {
         getDevice(); 
       }
     }, [device, dispatch])  // run only first time;
-
   
 
   return (
-    <div className={profileCss.profile}>
-        <div className={profileCss.profile__container}>
-            <div className={profileCss.profile__content + " " + transition} onAnimationEnd={()=> {compareUrl()}}>
+    <div className={AppStyle.app} >
+        <div >
+            <div onAnimationEnd={()=> {compareUrl()}}>
                 <Routes location={currentUrl} >
-                    <Route path="/profile" element={<HomeScreen/>}/>
+                    <Route path="/" element={<HomeScreen/>}/>
                     <Route path="/about" element={<AboutScreen/>}/>
                     <Route path="/project" element={<ProjectScreen/>}/>
                     <Route key="view" path="/project/view/:id" element={<ProjectView/>}/>
-                    <Route path="/experience" element={<ExperienceScreen/>}/>
                     <Route path="/contact" element={<ContactScreen/>}/>
-                    <Route path="/happy:id" element={<ContactScreen/>}/>
                 </Routes>
             </div>
         </div>        
-
-        {/* <div className={"profile__image" + (isHomeScreen ? " right-56" : " right-0 delay-300") }> */}
-        <div className={"profile__image" + (isHomeScreen ? " is-home" : " not-home") }>
-                <ProfileImage/>
-            <div className="profile__deco"></div>
-        </div>
-
-        <div className={"profile__skill" + (isHomeScreen ? " is-home" : " not-home") }>
-            <ProfileSkill/>
-        </div>
-
-        <div className={"profile__github" + (isHomeScreen ? " is-home" : " not-home") }>
-            <Github/>
-        </div>
-
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { AnyAction } from "redux";
 export const initialState = {
     isHomeScreen: true,
     device: 'desktop',
-    currentUrl: "/profile",
+    currentUrl: "/",
 }
 
 

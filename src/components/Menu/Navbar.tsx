@@ -5,7 +5,7 @@ import { RootState } from '@/services/store'
 import { menuActions } from '@/services/store/menuSlice'
 import { screenActions } from '@/services/store/screenSlice'
 import useClickOutsideHandler from '@/hooks/useClickOutsideHandler'
-import { MenuItem } from './MenuItem'
+import { MenuItemData } from './MenuItemData'
 import { Link } from 'react-router-dom'
 import { transitionActions } from '@/services/store/transitionSlice'
 
@@ -25,7 +25,7 @@ export default function Navbar() {
   const changeScreen = (e:any) => {
     dispatch(menuActions.hideMenu())
 
-    e.target.getAttribute("href") === "/profile" ? 
+    e.target.getAttribute("href") === "/" ? 
     dispatch(screenActions.isHomeScreen()) : dispatch(screenActions.notHomeScreen())
 
     dispatch(transitionActions.changeTransition("FADE_OUT"))
@@ -43,7 +43,7 @@ export default function Navbar() {
         {/* <button className="block py-2 text-xl" onClick={toggleLayout}>Home</button>
         <button className="block py-2 text-xl" onClick={toggleLayout}>Projects</button>
         <button className="block py-2 text-xl" onClick={toggleLayout}>Contact</button> */}
-        {MenuItem.map((item) => (
+        {MenuItemData.map((item) => (
           <Link key={item.title} to={item.url} className="nav__link" data-testid={item.title} onClick={changeScreen}>{item.title}</Link>
         ))}
       </div>

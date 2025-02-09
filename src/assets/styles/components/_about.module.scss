@@ -1,0 +1,50 @@
+.about {
+    z-index: 10;
+    position: relative;
+    height: 100vh;
+    background: var(--color-white);
+
+    h1 {
+        font-size: 20rem;
+        z-index: 1;
+        color: var(--color-white);
+        line-height: 10rem;
+        position: relative;
+        top: -10rem;
+    }
+
+    h3 {
+        // font-family: 'Poppins-Light';
+
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        max-width: 50%;
+
+        span {
+            display: inline-block;
+            transform: translateY(100%);
+            clip-path: inset(0 0 100% 0);
+            opacity: 0;
+            font-family: 'Poppins-Regular';
+        }
+
+
+    }
+
+    p {
+        width: 40%;
+        margin: auto;
+        font-size: 1.5em;
+        // text-align: right;
+        margin-top: 3em;
+    }
+}
+
+.buttonContainer {
+    transform-origin: center;
+    right: 0;
+    bottom: 0;
+    cursor: pointer ;
+}
