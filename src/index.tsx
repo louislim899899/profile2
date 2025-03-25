@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import store from './services/store';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
+import Splash from './components/common/Splash';
+import AboutScreen from './screens/AboutScreen';
+import Layout from './screens/layouts/Layout';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,11 +18,16 @@ root.render(
   <Provider store={store}>
 
   <React.StrictMode>
+    {/* <BrowserRouter basename={process.env.PUBLIC_URL || '/'}> */}
     <BrowserRouter>
+    <Splash />
+    <Layout>
       <Routes>
-        <Route index element={<HomeScreen />} />
+          <Route index element={<HomeScreen />} />
+          <Route path='/about' element={<AboutScreen />} />
       </Routes>
-      <App />
+      </Layout>
+      {/* <App /> */}
     </BrowserRouter>
   </React.StrictMode>
       

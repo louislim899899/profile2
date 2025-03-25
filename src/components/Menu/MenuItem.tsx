@@ -1,6 +1,6 @@
 import React from 'react'
 import useMagnetic from '../../hooks/useMagnetic'
-import SideMenuStyle from '@/assets/styles/components/_sidemenu.module.scss'
+import NavStyle from '@/assets/styles/components/_nav.module.scss'
 import { useLocation } from 'react-router-dom'
 
 interface MenuItemProps {
@@ -12,13 +12,9 @@ function MenuItem({title, url} : MenuItemProps) {
   const magneticTitleRef = useMagnetic()
   const location = useLocation();
 
-  console.log(location.pathname)
-  console.log(url)
-  
-
   return (
     <li>
-      <a href={url} ref={magneticTitleRef} className={location.pathname === url ? SideMenuStyle.active : ''}>{title}</a>
+      <a href={url} ref={magneticTitleRef} className={location.pathname === url ? NavStyle.active : ''}>{title}</a>
     </li>
   )
 }

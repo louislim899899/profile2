@@ -37,6 +37,10 @@ $_nav-width: 10em;
             transition: color 0.3s ease-in-out;
         }
     }
+
+    a {
+        display: block;
+    }
 }
 
 .copyright {

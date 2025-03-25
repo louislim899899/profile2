@@ -103,7 +103,7 @@ export default function About() {
         trigger: "h3 span", // Element to trigger the animation
         start: "top 50%", // Start animation when the element is 80% in the viewport
         toggleActions: "play reverse play reverse", // Play once
-        markers: true
+        // markers: true
       },
     });
   

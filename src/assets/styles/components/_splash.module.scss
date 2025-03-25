@@ -1,0 +1,90 @@
+.splashContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 800;
+    pointer-events: none;
+    background: transparent;
+}
+.splash {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 800;
+    pointer-events: none;
+    background: black;
+    overflow: visible;
+
+    .roundDivTopWrap {
+        top: 0;
+        bottom: unset;
+        position: absolute;
+        transform: translateY(99%);
+        z-index: 2;
+        height: 10vh;
+        width: 100%;
+        will-change: height;
+    
+        .roundDivTop {
+            width: 150%;
+            content: "";
+            display: block;
+            position: absolute;
+            background: var(--color-white);
+            height: 750%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -86.666%);
+            z-index: 1;
+            background-color: black;
+        }
+    }
+
+    .roundDivBottomWrap {
+        top: unset;
+        bottom: 0;
+        position: absolute;
+        transform: translateY(99%);
+        z-index: 2;
+        height: 10vh;
+        width: 100%;
+        will-change: height;
+    
+        .roundDivBottom {
+            width: 150%;
+            content: "";
+            display: block;
+            position: absolute;
+            background: var(--color-white);
+            height: 750%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -86.666%);
+            z-index: 1;
+            background-color: black;
+        }
+    }
+
+    
+
+    .wordings {
+        height: 100%;
+        
+        h2 {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            z-index: 9;
+        };
+    }
+}
+

@@ -1,5 +1,44 @@
-.nav {
+.topNav {
     li {
         padding: 0 2rem;
+        position: relative;
+
+        a {
+            display: inline-block;
+
+
+
+            &:after {
+                content: '';
+                position: absolute;
+                background: black;
+                left: 50%;
+                top: auto;
+                bottom: -20px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                transition: all .3s cubic-bezier(.7, 0, .3, 1);
+                transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+            }
+
+            &:hover:after {
+                transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+            }
+
+        }
+
+        // &:hover a:after {
+        //     transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+        // }
+
+        // ul:hover a.active:after {
+        //     transform: translate(-50%, -50%) scale(0) rotate(0.001deg) !important;
+        // }
+
+
     }
+
+
+
 }

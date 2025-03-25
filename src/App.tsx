@@ -9,6 +9,7 @@ import SplashScreen from './screens/SplashScreen'
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Splash from './components/common/Splash';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,9 +48,7 @@ function App() {
     <div className="app">
       {/* <SplashScreen/> */}
 
-        <header className="App-header">
           <Header />
-        </header>
         <main>
           {/* <ReactLenis root options={{lerp: 0.1, duration: 1.5}}> */}
           <Body />
